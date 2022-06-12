@@ -19,3 +19,54 @@ if c == 30 {
 else {
     print("\(c)歳ではないです")
 }
+
+// guard 条件が満たされない時にスコープを抜ける時に使う
+
+func Drink() {
+    guard c >= 20 else {
+        print("お酒だめ")
+        return
+    }
+    print("お酒OK")
+}
+
+Drink()
+
+// optionalの値はそのまま使えない
+var optionalType: Int? = 30
+
+print(optionalType)
+// 強制的アンラップ
+print(optionalType!)
+
+// オプショナルバインディング
+// nilでなければunwrapedIntにアンラップされる
+var optionalInt: Int? = 30
+if let unwrapedInt = optionalInt {
+    print(unwrapedInt)
+}
+else {
+    print("nilです")
+}
+
+// 空配列の作り方
+var emptyArray = [String]()
+print(emptyArray)
+
+// 空の辞書の作り方
+var emptyDictionary = [String: Int]()
+print(emptyDictionary)
+
+// 関数
+func Hello(name: String) -> String {
+    return "こんにちは、\(name)さん"
+}
+
+print(Hello(name: "kamijo"))
+
+// 関数ラベルを省略する
+func Hello2(_ name: String) -> String {
+    return "こんにちは、\(name)さん"
+}
+
+print(Hello2("kamijo"))
