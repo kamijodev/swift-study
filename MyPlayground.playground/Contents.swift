@@ -70,3 +70,26 @@ func Hello2(_ name: String) -> String {
 }
 
 print(Hello2("kamijo"))
+
+// クロージャ
+let Hello3 = { (name: String) -> String in
+    return "hello \(name)"
+}
+
+print(Hello3("kamijo"))
+
+class Animal {
+    var age = 2
+    let king = "犬"
+
+    func Bite() {
+        print("\(age)歳の\(king)が噛みつく")
+    }
+}
+
+var dog = Animal()
+
+print(dog.king)
+
+dog.Bite()
+
