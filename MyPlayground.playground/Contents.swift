@@ -93,3 +93,37 @@ print(dog.king)
 
 dog.Bite()
 
+// イニシャライザ
+class Animal2 {
+    var age: Int;
+    let kind: String;
+
+    func Bite() {
+        print("\(age)歳の\(kind)が噛みつく")
+    }
+
+    init(age: Int, kind: String) {
+        self.age = age
+        self.kind = kind
+    }
+}
+
+var cat = Animal2(age: 10, kind: "猫")
+
+cat.age = 3
+// cat.kind = "たぬき" kindは定数なので変更不可
+cat.Bite()
+
+// プロトコル
+protocol AnimalProtocol {
+    var age : Int { get }
+    func bark()
+}
+
+struct DogStruct: AnimalProtocol {
+    let age: Int
+    func bark() {
+        print("wwww")
+    }
+}
+
